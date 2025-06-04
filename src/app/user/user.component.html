@@ -1,0 +1,37 @@
+<h1>Employee CURD</h1>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <button class="btn btn-primary" *ngIf="showAddEmployeeBtn" (click)="addEmployee()">Add Employee</button>
+            <app-employee
+                (showList)="showEmployeeList()"
+                (save)="onSave($event)"
+                (cancel)="onCancel()"
+                *ngIf="showForm">
+            </app-employee>
+            <h2 class="mt-3">Employee List</h2>
+            <table class="table table-bordered mt-3">
+                <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Position</th>
+                    <th>Actions</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr *ngFor="let employee of employees">
+                    <td>{{ employee.id }}</td>
+                    <td>{{ employee.name }}</td>
+                    <td>{{ employee.position }}</td>
+                    <td>
+                    <button class="btn btn-warning" (click)="editEmployee(employee)">Edit</button>&nbsp;
+                    <button class="btn btn-danger" (click)="deleteEmployee(employee.id)">Delete</button>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
