@@ -6,6 +6,7 @@ import { provideStore } from '@ngrx/store';
 import { employeeReducer } from './store/employee.reducer';
 import { provideEffects } from '@ngrx/effects';
 import { EmployeeEffects } from './store/employee.effects';
+import { provideHttpClient } from '@angular/common/http';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -13,5 +14,6 @@ export const appConfig: ApplicationConfig = {
     provideRouter(routes), 
     provideStore({employeeReducer: employeeReducer}), // Assuming you have a reducer named employeeReducer
     provideEffects([EmployeeEffects]),
+    provideHttpClient()
   ]
 };
