@@ -86,7 +86,7 @@ export const employeeSkills: EmployeeSkills[] = [
 ]
 
 export interface EmployeeInitial {
-  id: number | null;
+  id: number;
   name: string;
   email: string;
   phone: string;
@@ -103,7 +103,7 @@ export interface EmployeeInitial {
 }
 
 export const employeeData: EmployeeInitial[] = [{
-  "id": null,
+  "id": 0,
   "name": "",
   "email": "",
   "phone": "",

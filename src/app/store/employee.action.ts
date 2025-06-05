@@ -4,12 +4,12 @@ import { Employee, EmployeeInitial } from "../data";
 
 export const addEmployee = createAction(
   "[Employee] Add Employee",
-  props<{ employee: Employee }>()
+  props<{ employee: EmployeeInitial }>()
 );
 
 export const updateEmployee = createAction(
   "[Employee] Update Employee",
-    props<{ employee: Employee }>()
+    props<{ employee: EmployeeInitial }>()
 );
 
 export const deleteEmployee = createAction(
@@ -23,7 +23,7 @@ export const loadEmployees = createAction(
 
 export const loadEmployeesSuccess = createAction(
   "[Employee] Load Employees Success",
-  props<{ employees: Employee[] }>()
+  props<{ employees: EmployeeInitial[] }>()
 );
 
 export const loadEmployeesFailure = createAction(
